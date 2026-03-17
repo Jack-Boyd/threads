@@ -6,7 +6,7 @@
 std::mutex counterMutex;
 void count(int& count, int interations)
 {
-  std::lock_guard<std::mutex> lock(counterMutex);
+  const std::lock_guard<std::mutex> lock(counterMutex);
   for (int i = 0; i < interations; i++) {
     count++;
   }
