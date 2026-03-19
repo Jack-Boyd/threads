@@ -7,14 +7,14 @@ void printNumber(int number)
             << number 
             << " - " 
             << std::this_thread::get_id() 
-            << std::endl;
+            << "\n";
 }
 
 void worker() 
 {
   std::cout << "Hello from a thread! - " 
             << std::this_thread::get_id() 
-            << std::endl;
+            << "\n";
 }
 
 int main() 
@@ -26,16 +26,16 @@ int main()
   std::thread t5([]() {
     std::cout << "Hello from a lambda thread! - "
               << std::this_thread::get_id()
-              << std::endl;
+              << "\n";
   });
 
-  std::cout << "Hello from main!" << std::endl;
+  std::cout << "Hello from main!" << "\n";
 
   t.join();
   t2.join();
   t3.join();
   t4.join();
   t5.join();
-  std::cout << "Done!" << std::endl;
+  std::cout << "Done!" << "\n";
   return 0;
 }

@@ -11,7 +11,7 @@ void write_log(std::fstream& writer)
 {
   std::lock_guard<std::mutex> lock(fileMutex);
   writer.seekp(0, std::ios::end);
-  writer << "Log: " << std::this_thread::get_id() << std::endl;
+  writer << "Log: " << std::this_thread::get_id() << "\n";
 }
 
 int main()
