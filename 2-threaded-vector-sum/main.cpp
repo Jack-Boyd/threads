@@ -6,7 +6,7 @@
 #include <thread>
 #include <vector>
 
-std::vector<int> generate_vector()
+std::vector<int> generateVector()
 {
   std::random_device rnd_device;
   std::mt19937 mersenne_engine{rnd_device()};
@@ -19,7 +19,7 @@ std::vector<int> generate_vector()
   return vec;
 }
 
-uint16_t generate_thread_count(const std::vector<int>& vec)
+uint16_t generateThreadCount(const std::vector<int>& vec)
 {
   uint16_t thread_count = std::thread::hardware_concurrency();
   if (thread_count == 0) {
@@ -33,7 +33,7 @@ uint16_t generate_thread_count(const std::vector<int>& vec)
   return thread_count;
 }
 
-void partial_sum(const std::vector<int>& vec, std::size_t start, std::size_t end, uint64_t &result)
+void partialSum(const std::vector<int>& vec, std::size_t start, std::size_t end, uint64_t &result)
 {
   result = 0;
   for (std::size_t i = start; i < end; ++i) {

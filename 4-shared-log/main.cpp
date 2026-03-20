@@ -7,7 +7,7 @@
 
 std::mutex fileMutex;
 
-void write_log(std::fstream& writer)
+void writeLog(std::fstream& writer)
 {
   std::lock_guard<std::mutex> lock(fileMutex);
   writer.seekp(0, std::ios::end);

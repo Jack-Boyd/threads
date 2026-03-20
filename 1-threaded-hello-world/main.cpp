@@ -21,8 +21,8 @@ int main()
 {
   std::thread t(worker);
   std::thread t2(worker);
-  std::thread t3(printNumber, 5);
-  std::thread t4(printNumber, 20);
+  std::thread t3(print_number, 5);
+  std::thread t4(print_number, 20);
   std::thread t5([]() {
     std::cout << "Hello from a lambda thread! - "
               << std::this_thread::get_id()
